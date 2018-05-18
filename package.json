@@ -1,0 +1,23 @@
+{
+  "name": "ingredients-front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakubwol/ingredients-front.git"
+  },
+  "author": "Katarzyna Wołowska",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakubwol/ingredients-front/issues"
+  },
+  "homepage": "https://github.com/jakubwol/ingredients-front#readme",
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "jquery": "^3.3.1"
+  }
+}
