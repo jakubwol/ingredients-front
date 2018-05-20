@@ -8,15 +8,34 @@ and open the template in the editor.
     <head>
         <title></title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
+        <!--<meta name="viewport" content="width=device-width">-->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
     </head>
     <body>
         <div class="container">
             <h1>Składniki kosmetyków w czasie ciąży i karmienia piersią</h1>
             <p>Podaj listę składników wybranego kosmetyku</p>
-            <textarea placeholder="składniki..." id="ingredientsList"></textarea>
+            <form>
+                <textarea placeholder="składniki..." id="ingredientsList"></textarea><br>
+                <a class="btn btn-primary" id="ingredientsFormBtn">Sprawdź</a>
+            </form>
         </div>
+        <script>
+
+            $("#ingredientsFormBtn").click(function() {
+
+                var ingredientsArray = $('#ingredientsList').val().split(',');
+                var server = "http://localhost:8000/ingredients";
+
+                $.post(server, {list: ingredientsArray}).done(function(response) {
+                    console.log(response);
+                    console.log(ingredientsArray);
+                });
+            });
+
+        </script>
     </body>
 </html>
